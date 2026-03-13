@@ -76,7 +76,9 @@ export const Header = () => {
               </ul>
             </nav>
           </div>
-          <Cta to="/waitlist">Garantir acesso antecipado</Cta>
+          <Cta to="/waitlist" size="small">
+            Garantir acesso antecipado
+          </Cta>
         </header>
       </Container>
     </div>

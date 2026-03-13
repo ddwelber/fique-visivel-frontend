@@ -5,6 +5,7 @@ interface CtaProps {
   to: string;
   children: ReactNode;
   variant?: "default" | "secondary";
+  size?: "default" | "small";
 }
 
 const ctaVariants = {
@@ -12,11 +13,21 @@ const ctaVariants = {
   secondary: "bg-white text-gray-500 border border-gray-100",
 };
 
-export const Cta = ({ to, children, variant = "default" }: CtaProps) => {
+const ctaSizes = {
+  default: "text-base",
+  small: "text-sm",
+};
+
+export const Cta = ({
+  to,
+  children,
+  variant = "default",
+  size = "default",
+}: CtaProps) => {
   return (
     <Link
       to={to}
-      className={`rounded-md px-4 py-3 text-sm font-medium transition-colors duration-150 ${ctaVariants[variant]}`}
+      className={`rounded-md px-4 py-3 font-medium transition-colors duration-150 ${ctaVariants[variant]} ${ctaSizes[size]}`}
     >
       {children}
     </Link>
