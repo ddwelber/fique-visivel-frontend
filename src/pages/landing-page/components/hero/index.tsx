@@ -16,7 +16,7 @@ export const Hero = () => {
       <Container>
         <div className="flex flex-col items-center justify-center gap-6 border-r border-l border-gray-100 px-4 py-25 text-center">
           <div className="text mx-auto flex w-full flex-col items-center gap-3">
-            <h1 className="text-[5rem] leading-[1.1] font-medium">
+            <h1 className="text-[5rem] leading-[1] font-medium">
               Autoridade no LinkedIn. <br /> No piloto automático.
             </h1>
             <p className="w-full max-w-2xl text-lg leading-[1.3] text-gray-500">
