@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+
+  --color-white: #ffffff;
+  --color-black: #141414;
+
+  --color-blue: #1265bf;
+
+  --color-gray-100: #e5e5e5;
+  --color-gray-500: #52525b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Geist", sans-serif;
+  background-color: #fff;
+  color: #141414;
+}
