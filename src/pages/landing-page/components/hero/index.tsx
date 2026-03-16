@@ -41,9 +41,9 @@ export const Hero = () => {
           </p>
           <div>
             <ul className="flex items-center gap-10">
-              {images.map((item) => {
+              {images.map((item, index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     <img src={item} />
                   </li>
                 );

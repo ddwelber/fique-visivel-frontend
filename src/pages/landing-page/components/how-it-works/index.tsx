@@ -3,7 +3,31 @@ import { Container } from "../../../../layouts/container";
 
 import mockup1 from "../../../../assets/how-it-works.svg";
 
+interface HowItWorksListProps {
+  id: number;
+  title: string;
+  content: string;
+}
+
 export const HowItWorks = () => {
+  const howItWorksList: HowItWorksListProps[] = [
+    {
+      id: 1,
+      title: "Definimos seu posicionamento",
+      content: "Trasnformamos experiência técnica em direção profissional.",
+    },
+    {
+      id: 2,
+      title: "Estruturamos sua linha editorial",
+      content: "Construímos uma narrativa que fortalece sua autoridade.",
+    },
+    {
+      id: 3,
+      title: "Consistência estratégica",
+      content: "Mantemos presença ativa sem depender de motivação.",
+    },
+  ];
+
   return (
     <div>
       <Container>
@@ -13,51 +37,41 @@ export const HowItWorks = () => {
             LinkedIn?
           </h2>
         </div>
-        <div className="flex w-full items-stretch border-r border-b border-gray-100">
+        <div className="flex w-full items-stretch border-r border-gray-100">
           <div className="left w-full max-w-90">
-            <ul className="flex w-full max-w-90 flex-col">
-              <li>
-                <button className="flex h-full w-full flex-col items-start gap-2 border-r border-b border-l border-gray-100 p-10 text-left">
-                  <span className="text-lg font-medium text-black">
-                    Definimos seu posicionamento
-                  </span>
-                  <p className="font-regular text-base leading-[1.3] text-gray-500">
-                    Trasnformamos experiência técnica em direção profissional.
-                  </p>
-                </button>
-              </li>
-              <li>
-                <button className="flex h-full w-full flex-col items-start gap-2 border-r border-b border-l border-gray-100 p-10 text-left">
-                  <span className="text-lg font-medium text-black">
-                    Estruturamos sua linha editorial
-                  </span>
-                  <p className="font-regular text-base leading-[1.3] text-gray-500">
-                    Construímos uma narrativa que fortalece sua autoridade.
-                  </p>
-                </button>
-              </li>
-              <li>
-                <button className="flex h-full w-full flex-col items-start gap-2 border-r border-l border-gray-100 p-10 text-left">
-                  <span className="text-lg font-medium text-black">
-                    Consistência estratégica
-                  </span>
-                  <p className="font-regular text-base leading-[1.3] text-gray-500">
-                    Mantemos presença ativa sem depender de motivação.
-                  </p>
-                </button>
-              </li>
+            <ul className="flex w-full max-w-90 flex-col border-r border-l border-gray-100">
+              {howItWorksList.map((item) => {
+                return (
+                  <li
+                    key={item.id + item.title}
+                    className="border-b border-gray-100 last:border-b-0"
+                  >
+                    <div className="flex h-full w-full flex-col items-start gap-2 p-10 text-left">
+                      <span className="text-lg font-medium text-black">
+                        {item.title}
+                      </span>
+                      <p className="font-regular text-base leading-[1.3] text-gray-500">
+                        {item.content}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="right relative w-full overflow-hidden">
-            <img src={mockup1} className="absolute right-0 bottom-0 w-full xl:top-2" />
+            <img
+              src={mockup1}
+              className="absolute right-0 bottom-0 w-full xl:top-2"
+            />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-2 border-r border-l border-gray-100 py-10">
+        {/* <div className="flex flex-col items-center justify-center gap-2 border-r border-l border-gray-100 py-10">
           <Cta to="/waitlist">Garantir acesso antecipado</Cta>
           <span className="text-sm text-gray-500">
             Vagas limitadas para os primeiros usuários
           </span>
-        </div>
+        </div> */}
       </Container>
     </div>
   );
