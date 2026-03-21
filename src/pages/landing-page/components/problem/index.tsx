@@ -2,7 +2,7 @@ import { Container } from "../../../../layouts/container";
 
 export const Problem = () => {
   return (
-    <div>
+    <section>
       <Container>
         <div className="title flex w-full items-center justify-center border-r border-b border-l border-gray-100 py-16 text-center">
           <h2 className="text-[2rem] leading-[1.3] font-medium text-black">
@@ -28,6 +28,6 @@ export const Problem = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };

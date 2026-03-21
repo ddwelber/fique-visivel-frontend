@@ -12,7 +12,7 @@ export const Hero = () => {
   const images = [amazon, spotify, booking, monday];
 
   return (
-    <div>
+    <section>
       <Container>
         <div className="flex flex-col items-center justify-center gap-6 border-r border-l border-gray-100 px-4 py-25 text-center">
           <div className="text mx-auto flex w-full flex-col items-center gap-3">
@@ -52,6 +52,6 @@ export const Hero = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };

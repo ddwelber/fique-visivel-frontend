@@ -1,4 +1,3 @@
-import { Cta } from "../../../../components/cta";
 import { Container } from "../../../../layouts/container";
 
 import mockup1 from "../../../../assets/how-it-works.svg";
@@ -29,7 +28,7 @@ export const HowItWorks = () => {
   ];
 
   return (
-    <div>
+    <section id="how-it-works">
       <Container>
         <div className="title flex w-full items-center justify-center border-r border-b border-l border-gray-100 py-16 text-center">
           <h2 className="text-[2rem] leading-[1.3] font-medium text-black">
@@ -66,13 +65,7 @@ export const HowItWorks = () => {
             />
           </div>
         </div>
-        {/* <div className="flex flex-col items-center justify-center gap-2 border-r border-l border-gray-100 py-10">
-          <Cta to="/waitlist">Garantir acesso antecipado</Cta>
-          <span className="text-sm text-gray-500">
-            Vagas limitadas para os primeiros usuários
-          </span>
-        </div> */}
       </Container>
-    </div>
+    </section>
   );
 };
