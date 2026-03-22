@@ -19,15 +19,15 @@ export const ReachChart = () => {
         >
           <defs>
             <linearGradient id="greenFade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#22c55e" stopOpacity={0.7} />
-              <stop offset="100%" stopColor="#22c55e" stopOpacity={0} />
+              <stop offset="0%" stopColor="#1265bf" stopOpacity={0.7} />
+              <stop offset="100%" stopColor="#1265bf" stopOpacity={0} />
             </linearGradient>
           </defs>
 
           <Area
             type="monotone"
             dataKey="value"
-            stroke="#22c55e"
+            stroke="#1265bf"
             strokeWidth={2}
             fill="url(#greenFade)"
             isAnimationActive={true}

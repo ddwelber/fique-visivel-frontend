@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MoveUp } from "lucide-react";
 
 export const SSIGauge = ({ value = 70 }) => {
   const radius = 100;
@@ -36,7 +37,7 @@ export const SSIGauge = ({ value = 70 }) => {
             } ${radius}
           `}
           fill="transparent"
-          stroke="#16a34a"
+          stroke="#1265bf"
           strokeWidth={stroke}
           strokeDasharray={circumference}
           strokeDashoffset={circumference}
@@ -46,7 +47,9 @@ export const SSIGauge = ({ value = 70 }) => {
         />
       </svg>
 
-      <span className="absolute bottom-2 text-2xl font-medium">80</span>
+      <span className="absolute bottom-2 flex items-center text-2xl font-medium text-black">
+        80 <MoveUp size={20} />
+      </span>
     </div>
   );
 };
