@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import logo from "../../assets/logo.svg";
 import { Container } from "../../layouts/container";
 import { Cta } from "../cta";
@@ -10,6 +14,8 @@ interface HeaderLinksProps {
 }
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
+
   const headerLinks: HeaderLinksProps[] = [
     {
       id: 1,
@@ -18,30 +24,34 @@ export const Header = () => {
     },
     {
       id: 2,
-      to: "#who-is-it-for",
-      content: "Para quem é",
+      to: "#benefits",
+      content: "Benefícios",
     },
     {
       id: 3,
-      to: "/plans",
-      content: "Planos",
+      to: "#testimonials",
+      content: "Resultados",
     },
+    // {
+    //   id: 4,
+    //   to: "/planos",
+    //   content: "Resultados",
+    // },
   ];
 
   return (
     <div className="border-b border-gray-100">
       <Container>
-        <header className="item-center flex max-h-full w-full justify-between border-r border-l border-gray-100 p-4">
-          <div className="left flex items-center gap-4">
-            <div className="brand">
-              <Link to="/">
-                <img src={logo} />
-              </Link>
-            </div>
-            <nav>
+        <header className="flex w-full items-center justify-between border-r border-l border-gray-100 p-4">
+          <div className="flex items-center gap-4">
+            <Link to="/">
+              <img src={logo} className="scale-115 md:scale-100" />
+            </Link>
+
+            <nav className="hidden md:block">
               <ul className="flex items-center text-sm font-medium">
                 {headerLinks.map((item) => {
-                  const isAnchor = item.id !== 3;
+                  const isAnchor = item.id !== 4;
 
                   if (isAnchor) {
                     return (
@@ -76,11 +86,85 @@ export const Header = () => {
               </ul>
             </nav>
           </div>
-          <Cta to="/waitlist" size="small">
-            Garantir acesso antecipado
-          </Cta>
+
+          <div className="hidden sm:block">
+            <Cta to="/waitlist" size="small">
+              Garantir acesso antecipado
+            </Cta>
+          </div>
+
+          <button onClick={() => setOpen(true)} className="md:hidden">
+            <Menu size={24} />
+          </button>
         </header>
       </Container>
+
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              className="fixed inset-0 z-40 bg-black/20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+            />
+
+            <motion.div
+              className="fixed top-0 left-0 z-50 h-full w-[80%] max-w-sm border-r border-gray-100 bg-white p-6"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "tween", duration: 0.25 }}
+            >
+              <div className="mb-6 flex items-center justify-between">
+                <img src={logo} className="scale-115" />
+                <button onClick={() => setOpen(false)}>
+                  <X size={24} />
+                </button>
+              </div>
+
+              <ul className="flex flex-col gap-4 text-base font-medium">
+                {headerLinks.map((item) => {
+                  const isAnchor = item.id !== 4;
+
+                  if (isAnchor) {
+                    return (
+                      <li key={item.id + item.content}>
+                        <a
+                          href={item.to}
+                          onClick={() => setOpen(false)}
+                          className="block"
+                        >
+                          {item.content}
+                        </a>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li key={item.id + item.content}>
+                        <Link
+                          to={item.to}
+                          onClick={() => setOpen(false)}
+                          className="block"
+                        >
+                          {item.content}
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+
+              <div className="mt-6">
+                <Cta to="/waitlist" size="default">
+                  Garantir acesso antecipado
+                </Cta>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

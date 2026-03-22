@@ -13,42 +13,45 @@ export const Hero = () => {
   return (
     <section>
       <Container>
-        <div className="flex flex-col items-center justify-center gap-6 border-r border-l border-gray-100 px-4 py-25 text-center">
-          <div className="text mx-auto flex w-full flex-col items-center gap-3">
-            <h1 className="text-[5rem] leading-none font-medium">
-              Autoridade no LinkedIn. <br /> No piloto automático.
+        <div className="flex flex-col items-center justify-center gap-6 border-r border-l border-gray-100 px-4 py-16 text-center md:py-20 lg:py-25">
+          <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-3">
+            <h1 className="text-4xl leading-none font-medium sm:text-5xl md:text-6xl lg:text-[5rem]">
+              Autoridade no LinkedIn. <br className="hidden sm:block" /> No
+              piloto automático.
             </h1>
-            <p className="w-full text-lg leading-[1.3] text-gray-500">
+            <p className="w-full text-base leading-[1.4] text-gray-500 sm:text-lg">
               Transformamos sua experiência em conteúdo estratégico, publicamos
-              automaticamente <br /> e mantemos sua presença ativa para atrair
-              oportunidades.
+              automaticamente <br className="hidden sm:block" /> e mantemos sua
+              presença ativa para atrair oportunidades.
             </p>
           </div>
-          <div className="ctas flex max-h-full w-full items-center justify-center gap-3">
+
+          <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
             <Cta to="/waitlist">Garantir acesso antecipado</Cta>
-            <Cta to="/how-it-works" variant="secondary">
+            {/* <Cta to="/how-it-works" variant="secondary">
               Veja como funciona
-            </Cta>
+            </Cta> */}
           </div>
         </div>
+
         <div className="flex max-h-full flex-col items-end justify-end gap-6 overflow-hidden border-t border-r border-l border-gray-100 text-center">
-          <img src={hero} className="w-full" />
+          <img src={hero} className="w-full object-cover md:scale-100" />
         </div>
-        <div className="flex items-center justify-between gap-6 overflow-hidden border-t border-r border-l border-gray-100 p-10">
-          <p className="max-w-xs text-lg leading-[1.3] text-gray-500">
+
+        <div className="flex flex-col items-center justify-between gap-6 overflow-hidden border-t border-r border-l border-gray-100 p-6 sm:flex-row sm:p-10">
+          <p className="max-w-xs text-center text-base leading-[1.4] text-gray-500 sm:text-left sm:text-lg">
             Receba contato de recrutadores de grandes empresas do mercado
           </p>
-          <div>
-            <ul className="flex items-center gap-10">
-              {images.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <img src={item} />
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+
+          <ul className="flex flex-wrap items-center justify-center gap-6 sm:flex-nowrap sm:gap-10">
+            {images.map((item, index) => {
+              return (
+                <li key={index}>
+                  <img src={item} />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </Container>
     </section>
