@@ -20,17 +20,14 @@ export const Hero = () => {
               piloto automático.
             </h1>
             <p className="w-full text-base leading-[1.4] text-gray-500 sm:text-lg">
-              Transformamos sua experiência em conteúdo estratégico, publicamos
-              automaticamente <br className="hidden sm:block" /> e mantemos sua
-              presença ativa para atrair oportunidades.
+              Nossa IA transforma sua experiência em conteúdo estratégico,
+              publica automaticamente <br className="hidden sm:block" /> e
+              mantém sua presença ativa para atrair oportunidades.
             </p>
           </div>
 
           <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
             <Cta to="/waitlist">Garantir acesso antecipado</Cta>
-            {/* <Cta to="/how-it-works" variant="secondary">
-              Veja como funciona
-            </Cta> */}
           </div>
         </div>
 

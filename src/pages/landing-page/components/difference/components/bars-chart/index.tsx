@@ -11,7 +11,7 @@ const data = [
 
 export const ReachChart = () => {
   return (
-    <div className="h-40 w-full">
+    <div className="h-40 w-full [&_*]:outline-none">
       <ResponsiveContainer>
         <AreaChart
           data={data}

@@ -4,6 +4,7 @@ import { CallToAction } from "./components/call-to-action";
 import { Difference } from "./components/difference";
 import { Hero } from "./components/hero";
 import { HowItWorks } from "./components/how-it-works";
+import { HowItWorksInPractice } from "./components/how-it-works-in-practice";
 import { Problem } from "./components/problem";
 import { Testimonials } from "./components/testimonials";
 
@@ -15,6 +16,8 @@ export const LandingPage = () => {
       <Problem />
       <Separator />
       <HowItWorks />
+      <Separator />
+      <HowItWorksInPractice />
       <Separator />
       <Benefits />
       <Separator />

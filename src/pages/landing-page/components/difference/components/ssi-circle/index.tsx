@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { MoveUp } from "lucide-react";
+import { animate } from "framer-motion";
 
 export const SSIGauge = ({ value = 70 }) => {
   const radius = 100;
@@ -10,8 +12,31 @@ export const SSIGauge = ({ value = 70 }) => {
 
   const offset = circumference - (value / 100) * circumference;
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const motionValue = useMotionValue(0);
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(motionValue, value, {
+      duration: 1.2,
+      ease: "easeOut",
+      onUpdate: (latest) => {
+        setDisplayValue(Math.floor(latest));
+      },
+    });
+
+    return () => controls.stop();
+  }, [isInView, value, motionValue]);
+
   return (
-    <div className="relative flex flex-col items-center justify-center">
+    <div
+      ref={ref}
+      className="relative flex flex-col items-center justify-center"
+    >
       <svg
         height={radius}
         width={radius * 2}
@@ -40,15 +65,17 @@ export const SSIGauge = ({ value = 70 }) => {
           stroke="#1265bf"
           strokeWidth={stroke}
           strokeDasharray={circumference}
-          strokeDashoffset={circumference}
-          animate={{ strokeDashoffset: offset }}
+          initial={{ strokeDashoffset: circumference }}
+          animate={{
+            strokeDashoffset: isInView ? offset : circumference,
+          }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           strokeLinecap="round"
         />
       </svg>
 
       <span className="absolute bottom-2 flex items-center text-2xl font-medium text-black">
-        80 <MoveUp size={20} />
+        {displayValue} <MoveUp size={20} />
       </span>
     </div>
   );

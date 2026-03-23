@@ -12,18 +12,21 @@ export const HowItWorks = () => {
   const howItWorksList: HowItWorksListProps[] = [
     {
       id: 1,
-      title: "Definimos seu posicionamento",
-      content: "Trasnformamos experiência técnica em direção profissional.",
+      title: "Conte o que você sabe",
+      content:
+        "Descreva sua experiência, opiniões e aprendizados. A IA entende seu contexto.",
     },
     {
       id: 2,
-      title: "Estruturamos sua linha editorial",
-      content: "Construímos uma narrativa que fortalece sua autoridade.",
+      title: "Receba posts prontos",
+      content:
+        "Criamos conteúdos estruturados, com gancho e narrativa, prontos para publicar.",
     },
     {
       id: 3,
-      title: "Consistência estratégica",
-      content: "Mantemos presença ativa sem depender de motivação.",
+      title: "Publicamos por você",
+      content:
+        "Aprove e deixe o resto com a gente. Seus posts saem automaticamente.",
     },
   ];
 
@@ -32,7 +35,7 @@ export const HowItWorks = () => {
       <Container>
         <div className="flex w-full items-center justify-center border-r border-b border-l border-gray-100 px-4 py-12 text-center sm:py-16 md:px-0">
           <h2 className="text-2xl leading-[1.3] font-medium text-black md:text-[2rem]">
-            Como transformamos sua experiência{" "}
+            Como nossa IA transforma sua experiência{" "}
             <br className="hidden sm:block" /> em presença estratégica no
             LinkedIn?
           </h2>
@@ -67,6 +70,10 @@ export const HowItWorks = () => {
               className="relative w-full object-cover lg:absolute lg:right-0 lg:bottom-0 xl:top-2"
             />
           </div>
+        </div>
+
+        <div className="font-regular flex max-h-full w-full items-center justify-center border-t border-r border-l border-gray-100 px-4 py-8 text-center text-base text-gray-500 md:px-0">
+          <p>Sem precisar ter ideias, escrever posts ou lembrar de publicar.</p>
         </div>
       </Container>
     </section>
