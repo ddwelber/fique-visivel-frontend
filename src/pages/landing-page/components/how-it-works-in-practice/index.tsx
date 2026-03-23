@@ -1,0 +1,122 @@
+import { MoveRight } from "lucide-react";
+import { Container } from "../../../../layouts/container";
+
+import leonardo from "../../../../assets/testimonials/leonardo.jpg";
+import { Actions } from "./components/actions";
+
+import { motion } from "framer-motion";
+
+export const HowItWorksInPractice = () => {
+  return (
+    <section>
+      <Container>
+        <div className="flex w-full items-center justify-center border-r border-b border-l border-gray-100 px-4 py-12 text-center sm:py-16 md:px-0">
+          <h2 className="text-2xl leading-[1.3] font-medium text-black md:text-[2rem]">
+            O mesmo profissional. <br className="hidden sm:block" /> Dois jeitos
+            de se posicionar.
+          </h2>
+        </div>
+
+        <div className="flex w-full flex-col border-r border-l border-gray-100 lg:flex-row lg:items-stretch lg:gap-4">
+          <div className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-r lg:p-10">
+            <p className="text-sm text-gray-500">Antes</p>
+
+            <div className="flex w-full flex-col gap-4 rounded-md border border-gray-100 p-4">
+              <div className="flex items-center gap-2">
+                <img
+                  src={leonardo}
+                  className="size-10 rounded-full border border-gray-100 object-cover"
+                />
+                <div className="flex w-full flex-col">
+                  <p className="text-base leading-none font-medium text-black">
+                    Leonardo Macedo
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Engenheiro de Software
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-base">
+                Recentemente trabalhei com o time de vendas em um projeto para
+                melhorar a integração com marketing.
+              </p>
+              <p className="text-base">
+                A ideia era alinhar melhor os processos e melhorar a comunicação
+                entre as áreas.
+              </p>
+              <p className="text-base">
+                No final, melhoramos a troca de informações entre os times e
+                deixamos alguns processos mais organizados.
+              </p>
+
+              <hr className="border-gray-100" />
+              <Actions />
+            </div>
+          </div>
+
+          <div className="flex w-full items-center justify-center py-4 lg:w-auto lg:py-0">
+            <MoveRight
+              className="rotate-90 text-gray-500 lg:rotate-0"
+              size={20}
+            />
+          </div>
+
+          <div className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-l lg:p-10">
+            <p className="text-sm text-gray-500">
+              Depois, com nossa plataforma
+            </p>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              className="flex w-full flex-col gap-6 rounded-md border border-gray-100 p-4"
+            >
+              <div className="flex items-center gap-2">
+                <img
+                  src={leonardo}
+                  className="size-10 rounded-full border border-gray-100 object-cover"
+                />
+                <div className="flex w-full flex-col">
+                  <p className="text-base leading-none font-medium text-black">
+                    Leonardo Macedo
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Engenheiro de Software
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 text-base">
+                <p>
+                  <b>
+                    Liderei uma iniciativa de integração entre marketing e
+                    vendas
+                  </b>
+                  , e isso mudou completamente como geramos oportunidades.
+                </p>
+                <p>No começo, o cenário era comum:</p>
+                <p>
+                  → times desalinhados <br />
+                  → processos pouco claros <br />→ muita informação se perdendo
+                  no caminho
+                </p>
+                <p>
+                  A virada veio quando paramos de focar só em “comunicação” e
+                  começamos a tratar isso como processo.
+                </p>
+                <p>
+                  <b>1 aprendizado que fez diferença:</b>
+                </p>
+                <p>Sem processo claro, cada lead vira um caso isolado.</p>
+              </div>
+
+              <hr className="border-gray-100" />
+              <Actions type="rich" />
+            </motion.div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
