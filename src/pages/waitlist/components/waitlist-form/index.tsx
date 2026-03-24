@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useWaitlistForm } from "../../../../hooks/use-waitlist-form";
 import type { WaitlistData } from "../../../../types/waitlist-data";
 
@@ -73,14 +73,6 @@ export function WaitlistForm() {
       });
     }
   };
-
-  useEffect(() => {
-    return () => {
-      trackEvent("form_abandon", {
-        step,
-      });
-    };
-  }, []);
 
   if (status === "success") {
     return (
