@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/logo.svg";
 import { Container } from "../../layouts/container";
 import { Cta } from "../cta";
+import { trackEvent } from "../../lib/analytics";
 
 interface HeaderLinksProps {
   id: number;
@@ -32,11 +33,6 @@ export const Header = () => {
       to: "#testimonials",
       content: "Resultados",
     },
-    // {
-    //   id: 4,
-    //   to: "/planos",
-    //   content: "Resultados",
-    // },
   ];
 
   return (
@@ -88,7 +84,15 @@ export const Header = () => {
           </div>
 
           <div className="hidden sm:block">
-            <Cta to="/waitlist" size="small">
+            <Cta
+              to="/waitlist"
+              size="small"
+              onClick={() => {
+                trackEvent("cta_click", {
+                  location: "header",
+                });
+              }}
+            >
               Garantir acesso antecipado
             </Cta>
           </div>
@@ -157,7 +161,15 @@ export const Header = () => {
               </ul>
 
               <div className="mt-6">
-                <Cta to="/waitlist" size="default">
+                <Cta
+                  to="/waitlist"
+                  size="default"
+                  onClick={() => {
+                    trackEvent("cta_click", {
+                      location: "header",
+                    });
+                  }}
+                >
                   Garantir acesso antecipado
                 </Cta>
               </div>

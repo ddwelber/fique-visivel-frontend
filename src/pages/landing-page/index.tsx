@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { trackEvent } from "../../lib/analytics";
 import { Separator } from "../../components/separator";
 import { Benefits } from "./components/benefits";
 import { CallToAction } from "./components/call-to-action";
@@ -9,6 +11,49 @@ import { Problem } from "./components/problem";
 import { Testimonials } from "./components/testimonials";
 
 export const LandingPage = () => {
+  const tracked = useRef({
+    25: false,
+    50: false,
+    75: false,
+    100: false,
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scroll = window.scrollY;
+      const height = document.body.scrollHeight - window.innerHeight;
+      const percent = Math.round((scroll / height) * 100);
+
+      if (percent >= 25 && !tracked.current[25]) {
+        console.log("scroll_25");
+        tracked.current[25] = true;
+        trackEvent("scroll_25");
+      }
+
+      if (percent >= 50 && !tracked.current[50]) {
+        console.log("scroll_50");
+        tracked.current[50] = true;
+        trackEvent("scroll_50");
+      }
+
+      if (percent >= 75 && !tracked.current[75]) {
+        console.log("scroll_75");
+        tracked.current[75] = true;
+        trackEvent("scroll_75");
+      }
+
+      if (percent >= 100 && !tracked.current[100]) {
+        console.log("scroll_100");
+        tracked.current[100] = true;
+        trackEvent("scroll_100");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main>
       <Hero />
