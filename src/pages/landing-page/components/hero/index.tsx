@@ -6,6 +6,7 @@ import hero from "../../../../assets/hero.svg";
 import bradesco from "../../../../assets/logos/bradesco.svg";
 import santander from "../../../../assets/logos/santander.svg";
 import btg from "../../../../assets/logos/btg.svg";
+import { trackEvent } from "../../../../lib/analytics";
 
 export const Hero = () => {
   const images = [bradesco, santander, btg];
@@ -27,7 +28,16 @@ export const Hero = () => {
           </div>
 
           <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
-            <Cta to="/waitlist">Garantir acesso antecipado</Cta>
+            <Cta
+              to="/waitlist"
+              onClick={() => {
+                trackEvent("cta_click", {
+                  location: "hero",
+                });
+              }}
+            >
+              Garantir acesso antecipado
+            </Cta>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, type LinkProps } from "react-router-dom";
 
-interface CtaProps {
+interface CtaProps extends LinkProps {
   to: string;
   children: ReactNode;
   variant?: "default" | "secondary";

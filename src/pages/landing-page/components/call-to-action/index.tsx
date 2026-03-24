@@ -1,5 +1,6 @@
 import { Cta } from "../../../../components/cta";
 import { Container } from "../../../../layouts/container";
+import { trackEvent } from "../../../../lib/analytics";
 
 export const CallToAction = () => {
   return (
@@ -11,7 +12,16 @@ export const CallToAction = () => {
             no LinkedIn?
           </h2>
 
-          <Cta to="/waitlist">Garantir acesso antecipado</Cta>
+          <Cta
+            to="/waitlist"
+            onClick={() => {
+              trackEvent("cta_click", {
+                location: "cta",
+              });
+            }}
+          >
+            Garantir acesso antecipado
+          </Cta>
         </div>
       </Container>
     </section>
