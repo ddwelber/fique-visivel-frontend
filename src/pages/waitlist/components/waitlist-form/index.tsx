@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useWaitlistForm } from "../../../../hooks/use-waitlist-form";
 import type { WaitlistData } from "../../../../types/waitlist-data";
 
 import { CheckCircle2, Loader2, XCircle } from "lucide-react";
 import { trackEvent } from "../../../../lib/analytics";
+import { createWaitlistUser } from "../../../../services/waitlist.service";
 
 export function WaitlistForm() {
   const [step, setStep] = useState(1);
@@ -21,11 +22,7 @@ export function WaitlistForm() {
     try {
       setLoading(true);
 
-      await fetch(import.meta.env.VITE_SHEETS_API_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify(data),
-      });
+      await createWaitlistUser(data);
 
       setStatus("success");
       trackEvent("form_submit");
@@ -74,14 +71,6 @@ export function WaitlistForm() {
     }
   };
 
-  useEffect(() => {
-    return () => {
-      trackEvent("form_abandon", {
-        step,
-      });
-    };
-  }, []);
-
   if (status === "success") {
     return (
       <div className="flex w-full max-w-md flex-col items-center gap-4 rounded-md border border-gray-100 p-8 text-center">
@@ -98,14 +87,14 @@ export function WaitlistForm() {
   if (status === "error") {
     return (
       <div className="flex w-full max-w-md flex-col items-center gap-4 rounded-md border border-gray-100 p-8 text-center">
-        <h2 className="text-xl font-semibold">
-          <XCircle size={20} className="text-red" /> Erro ao enviar
+        <h2 className="flex items-center gap-2 text-xl font-semibold">
+          <XCircle size={20} className="text-red" /> Oops, erro inesperado!
         </h2>
         <p className="text-gray-500">Tente novamente em alguns instantes.</p>
 
         <button
           onClick={() => setStatus("idle")}
-          className="mt-2 rounded-md bg-black px-4 py-3 text-white"
+          className="mt-2 cursor-pointer rounded-md bg-black px-4 py-3 text-sm font-medium text-white transition-colors duration-150 hover:bg-black/85"
         >
           Tentar novamente
         </button>

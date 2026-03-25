@@ -25,25 +25,21 @@ export const LandingPage = () => {
       const percent = Math.round((scroll / height) * 100);
 
       if (percent >= 25 && !tracked.current[25]) {
-        console.log("scroll_25");
         tracked.current[25] = true;
         trackEvent("scroll_25");
       }
 
       if (percent >= 50 && !tracked.current[50]) {
-        console.log("scroll_50");
         tracked.current[50] = true;
         trackEvent("scroll_50");
       }
 
       if (percent >= 75 && !tracked.current[75]) {
-        console.log("scroll_75");
         tracked.current[75] = true;
         trackEvent("scroll_75");
       }
 
       if (percent >= 100 && !tracked.current[100]) {
-        console.log("scroll_100");
         tracked.current[100] = true;
         trackEvent("scroll_100");
       }

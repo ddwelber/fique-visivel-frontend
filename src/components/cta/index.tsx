@@ -23,10 +23,12 @@ export const Cta = ({
   children,
   variant = "default",
   size = "default",
+  ...props
 }: CtaProps) => {
   return (
     <Link
       to={to}
+      {...props}
       className={`rounded-md px-4 py-3 font-medium transition-colors duration-150 ${ctaVariants[variant]} ${ctaSizes[size]}`}
     >
       {children}
