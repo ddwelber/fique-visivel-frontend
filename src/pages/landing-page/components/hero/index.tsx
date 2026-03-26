@@ -2,6 +2,7 @@ import { Cta } from "../../../../components/cta";
 import { Container } from "../../../../layouts/container";
 
 import hero from "../../../../assets/hero.svg";
+import heroMockup from "../../../../assets/mobile-hero-mockup.png";
 
 import bradesco from "../../../../assets/logos/bradesco.svg";
 import santander from "../../../../assets/logos/santander.svg";
@@ -41,8 +42,18 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="flex max-h-full flex-col items-end justify-end gap-6 overflow-hidden border-t border-r border-l border-gray-100 text-center">
-          <img src={hero} className="w-full object-cover md:scale-100" />
+        <div className="relative hidden h-75 items-end justify-center overflow-hidden border-t border-r border-l border-gray-100 text-center md:flex md:h-auto md:justify-end">
+          <img
+            src={hero}
+            className="w-full scale-[1.8] object-cover md:scale-100"
+          />
+        </div>
+
+        <div className="relative flex h-80 items-end justify-center overflow-hidden border-t border-r border-l border-gray-100 text-center md:hidden md:h-auto md:justify-end">
+          <img
+            src={heroMockup}
+            className="w-full scale-[1.8] object-cover md:scale-100 bottom-0 absolute -right-12"
+          />
         </div>
 
         <div className="flex flex-col items-center justify-between gap-6 overflow-hidden border-t border-r border-l border-gray-100 p-6 sm:flex-row sm:p-10">
