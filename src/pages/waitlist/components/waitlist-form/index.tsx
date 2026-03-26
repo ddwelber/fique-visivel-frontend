@@ -379,7 +379,7 @@ export function WaitlistForm() {
                   Carregando
                 </>
               ) : (
-                "Entrar na waitlist"
+                "Entrar na lista de espera"
               )}
             </button>
           </div>
