@@ -1,6 +1,7 @@
 import { Container } from "../../../../layouts/container";
 
 import mockup1 from "../../../../assets/how-it-works.svg";
+import mobileMockup from "../../../../assets/mobile-mockup.png";
 
 interface HowItWorksListProps {
   id: number;
@@ -64,10 +65,17 @@ export const HowItWorks = () => {
             </ul>
           </div>
 
-          <div className="relative w-full overflow-hidden border-t border-gray-100 lg:border-t-0">
+          <div className="relative hidden w-full overflow-hidden border-t border-gray-100 md:block lg:border-t-0">
             <img
               src={mockup1}
-              className="relative w-full object-cover lg:absolute lg:right-0 lg:bottom-0 xl:top-2"
+              className="relative w-full scale-150 object-cover md:scale-100 lg:absolute lg:right-0 lg:bottom-0 xl:top-2"
+            />
+          </div>
+
+          <div className="flex h-80 w-full flex-col items-start justify-end overflow-hidden border-t border-gray-100 sm:h-100 md:hidden lg:border-t-0">
+            <img
+              src={mobileMockup}
+              className="relative bottom-0 w-full right-15 scale-150 object-cover sm:scale-100 lg:absolute lg:right-0 lg:bottom-0 xl:top-2"
             />
           </div>
         </div>
