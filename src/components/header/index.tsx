@@ -41,7 +41,11 @@ export const Header = () => {
         <header className="flex w-full items-center justify-between border-r border-l border-gray-100 p-4">
           <div className="flex items-center gap-4">
             <Link to="/">
-              <img src={logo} className="scale-115 md:scale-100" />
+              <img
+                src={logo}
+                alt="Fique Visível"
+                className="scale-115 md:scale-100"
+              />
             </Link>
 
             <nav className="hidden md:block">
@@ -97,7 +101,11 @@ export const Header = () => {
             </Cta>
           </div>
 
-          <button onClick={() => setOpen(true)} className="md:hidden">
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden"
+            aria-label="Abrir menu"
+          >
             <Menu size={24} />
           </button>
         </header>

@@ -25,6 +25,8 @@ export const HowItWorksInPractice = () => {
               <div className="flex items-center gap-2">
                 <img
                   src={leonardo}
+                  alt="Leonardo Macedo"
+                  loading="lazy"
                   className="size-10 rounded-full border border-gray-100 object-cover"
                 />
                 <div className="flex w-full flex-col">

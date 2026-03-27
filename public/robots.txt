@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fiquevisivel.com/sitemap.xml
