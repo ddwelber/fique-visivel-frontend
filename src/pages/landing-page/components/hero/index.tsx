@@ -45,6 +45,7 @@ export const Hero = () => {
         <div className="relative hidden h-75 items-end justify-center overflow-hidden border-t border-r border-l border-gray-100 text-center md:flex md:h-auto md:justify-end">
           <img
             src={hero}
+            alt="Demonstração da plataforma"
             className="w-full scale-[1.8] object-cover md:scale-100"
           />
         </div>
@@ -52,7 +53,8 @@ export const Hero = () => {
         <div className="relative flex h-80 items-end justify-center overflow-hidden border-t border-r border-l border-gray-100 text-center md:hidden md:h-auto md:justify-end">
           <img
             src={heroMockup}
-            className="w-full scale-[1.8] object-cover md:scale-100 bottom-0 absolute -right-12"
+            alt="Demonstração da plataforma"
+            className="absolute -right-12 bottom-0 w-full scale-[1.8] object-cover md:scale-100"
           />
         </div>
 
@@ -65,7 +67,7 @@ export const Hero = () => {
             {images.map((item, index) => {
               return (
                 <li key={index}>
-                  <img src={item} />
+                  <img src={item} loading="lazy" />
                 </li>
               );
             })}
