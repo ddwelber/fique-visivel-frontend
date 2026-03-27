@@ -46,6 +46,7 @@ export const Hero = () => {
           <img
             src={hero}
             alt="Demonstração da plataforma"
+            loading="eager"
             className="w-full scale-[1.8] object-cover md:scale-100"
           />
         </div>
@@ -54,6 +55,7 @@ export const Hero = () => {
           <img
             src={heroMockup}
             alt="Demonstração da plataforma"
+            loading="eager"
             className="absolute -right-12 bottom-0 w-full scale-[1.8] object-cover md:scale-100"
           />
         </div>

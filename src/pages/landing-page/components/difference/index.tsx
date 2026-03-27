@@ -1,6 +1,18 @@
 import { Container } from "../../../../layouts/container";
-import { ReachChart } from "./components/bars-chart";
-import { SSIGauge } from "./components/ssi-circle";
+
+import { lazy, Suspense } from "react";
+
+const ReachChart = lazy(() =>
+  import("./components/bars-chart").then((module) => ({
+    default: module.ReachChart,
+  })),
+);
+
+const SSIGauge = lazy(() =>
+  import("./components/ssi-circle").then((module) => ({
+    default: module.SSIGauge,
+  })),
+);
 
 import { useRef } from "react";
 
@@ -19,10 +31,14 @@ export const Difference = () => {
 
         <div className="grid grid-cols-2 border-x border-b border-gray-100 sm:grid-cols-2">
           <div className="flex flex-col items-center justify-end border-r border-gray-100 sm:border-b-0">
-            <SSIGauge />
+            <Suspense fallback={<div className="h-40" />}>
+              <SSIGauge />
+            </Suspense>
           </div>
           <div className="flex flex-col items-center justify-end">
-            <ReachChart />
+            <Suspense fallback={<div className="h-40" />}>
+              <ReachChart />
+            </Suspense>
           </div>
         </div>
 

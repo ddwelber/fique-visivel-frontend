@@ -22,7 +22,12 @@ export const Testimonials = () => {
         <div className="grid w-full grid-cols-1 border-r border-l border-gray-100 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex w-full flex-col justify-between gap-6 border-b border-gray-100 p-6 sm:border-r sm:p-8 lg:border-b-0 lg:p-10">
             <div className="flex flex-col gap-1.5">
-              <img src={btgPactual} className="h-15 w-30" />
+              <img
+                src={btgPactual}
+                alt="Banco BTG Pactual"
+                loading="lazy"
+                className="h-15 w-30"
+              />
               <p className="text-base leading-normal text-black">
                 Eu quase nunca postava no LinkedIn porque não sabia por onde
                 começar. Com a ferramenta ficou muito mais fácil transformar
@@ -33,6 +38,8 @@ export const Testimonials = () => {
             <div className="flex items-center gap-2">
               <img
                 src={lucas}
+                alt="Lucas Andrade"
+                loading="lazy"
                 className="size-10 rounded-full border border-gray-100 object-cover"
               />
               <div className="flex w-full flex-col">
@@ -46,7 +53,12 @@ export const Testimonials = () => {
 
           <div className="flex w-full flex-col justify-between gap-6 border-b border-gray-100 p-6 sm:p-8 lg:border-r lg:border-b-0 lg:p-10">
             <div className="flex flex-col gap-1.5">
-              <img src={bradesco} className="h-15 w-30" />
+              <img
+                src={bradesco}
+                alt="Banco Bradesco"
+                loading="lazy"
+                className="h-15 w-30"
+              />
               <p className="text-base leading-normal text-black">
                 Eu sempre tive dificuldade em transformar minhas ideias em bons
                 posts. A plataforma me ajudou a estruturar melhor o conteúdo e
@@ -57,6 +69,8 @@ export const Testimonials = () => {
             <div className="flex items-center gap-2">
               <img
                 src={leonardo}
+                alt="Leonardo Macedo"
+                loading="lazy"
                 className="size-10 rounded-full border border-gray-100 object-cover"
               />
               <div className="flex w-full flex-col">
@@ -70,7 +84,12 @@ export const Testimonials = () => {
 
           <div className="flex w-full flex-col justify-between gap-6 p-6 sm:p-8 md:border-r md:border-gray-100 lg:border-none lg:p-10">
             <div className="flex flex-col gap-1.5">
-              <img src={santander} className="h-15 w-30" />
+              <img
+                src={santander}
+                alt="Banco Santander"
+                loading="lazy"
+                className="h-15 w-30"
+              />
               <p className="text-base leading-normal text-black">
                 O que mais gostei foi a velocidade. Em poucos minutos consigo
                 transformar uma ideia simples em um post muito mais claro e
@@ -81,6 +100,8 @@ export const Testimonials = () => {
             <div className="flex items-center gap-2">
               <img
                 src={camila}
+                alt="Carolina Freitas"
+                loading="lazy"
                 className="size-10 rounded-full border border-gray-100 object-cover"
               />
               <div className="flex w-full flex-col">
