@@ -6,16 +6,7 @@ import { transition } from "../../../../lib/animation";
 import hero from "../../../../assets/hero.svg";
 import heroMockup from "../../../../assets/mobile-hero-mockup.png";
 
-import bradesco from "../../../../assets/logos/bradesco.svg";
-import santander from "../../../../assets/logos/santander.svg";
-import btg from "../../../../assets/logos/btg.svg";
 import { trackEvent } from "../../../../lib/analytics";
-
-const images = [
-  { src: bradesco, alt: "Bradesco" },
-  { src: santander, alt: "Santander" },
-  { src: btg, alt: "BTG Pactual" },
-];
 
 export const Hero = () => {
   return (
@@ -87,31 +78,6 @@ export const Hero = () => {
             className="absolute -right-12 bottom-0 w-full scale-[1.8] object-cover md:scale-100"
           />
         </div>
-
-        {/* Logos */}
-        <motion.div
-          className="flex flex-col items-center justify-between gap-6 overflow-hidden border-t border-r border-l border-gray-100 p-6 sm:flex-row sm:p-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ...transition, delay: 0.25 }}
-        >
-          <p className="max-w-xs text-center text-base leading-[1.4] text-gray-500 sm:text-left sm:text-lg">
-            Profissionais dessas empresas já estão na lista de espera
-          </p>
-
-          <ul className="flex flex-wrap items-center justify-center gap-6 sm:flex-nowrap sm:gap-10">
-            {images.map((item) => (
-              <li key={item.alt}>
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </li>
-            ))}
-          </ul>
-        </motion.div>
       </Container>
     </section>
   );
