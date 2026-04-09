@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Cta } from "../../../../components/cta";
 import { Container } from "../../../../layouts/container";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 import { trackEvent } from "../../../../lib/analytics";
 
 export const CallToAction = () => {
@@ -12,7 +12,6 @@ export const CallToAction = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={viewport}
             variants={fadeInUp}
             transition={transition}
             className="flex flex-col gap-2"
@@ -30,7 +29,6 @@ export const CallToAction = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={viewport}
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.08 }}
             className="flex shrink-0 flex-col items-center gap-2"

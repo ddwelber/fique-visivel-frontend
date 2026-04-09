@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeInUp, transition, viewport } from "../../lib/animation";
+import { fadeInUp, transition } from "../../lib/animation";
 
 interface GridCardProps {
   title: string;
@@ -21,7 +21,6 @@ export const GridCard = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={viewport}
       variants={fadeInUp}
       transition={{ ...transition, delay: index * 0.07 }}
       whileHover={{ y: -2 }}

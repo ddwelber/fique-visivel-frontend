@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Cta } from "../../../../components/cta";
 import { SectionHeader } from "../../../../components/section-header";
 import { Container } from "../../../../layouts/container";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 
 const problems = [
   "Você sabe muito, mas posta pouco",
@@ -29,7 +29,6 @@ export const Problem = () => {
                   key={index}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={viewport}
                   variants={fadeInUp}
                   transition={{ ...transition, delay: index * 0.07 }}
                   className={[
@@ -49,7 +48,6 @@ export const Problem = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={viewport}
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.1 }}
             className="border-t border-gray-100 px-4 py-6 text-center sm:py-8 md:px-0"
@@ -65,7 +63,6 @@ export const Problem = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={viewport}
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.15 }}
             className="flex flex-col items-center gap-2 pb-6"

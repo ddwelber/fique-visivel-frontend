@@ -1,13 +1,8 @@
-import type { Transition, Variants, Viewport } from "framer-motion";
+import type { Transition, Variants } from "framer-motion";
 
 export const transition: Transition = {
   duration: 0.45,
   ease: [0.16, 1, 0.3, 1],
-};
-
-export const viewport: Viewport = {
-  once: true,
-  margin: "-60px",
 };
 
 export const fadeInUp: Variants = {

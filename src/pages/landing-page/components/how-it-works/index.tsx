@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Container } from "../../../../layouts/container";
 import { SectionHeader } from "../../../../components/section-header";
 import { Cta } from "../../../../components/cta";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 
 import mockup1 from "../../../../assets/how-it-works.svg";
 import mobileMockup from "../../../../assets/mobile-mockup.png";
@@ -52,7 +52,6 @@ export const HowItWorks = () => {
                   key={item.id}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={viewport}
                   variants={fadeInUp}
                   transition={{ ...transition, delay: index * 0.08 }}
                   className="border-b border-gray-100 last:border-b-0"
@@ -70,7 +69,6 @@ export const HowItWorks = () => {
             </ul>
           </div>
 
-          {/* Mockup desktop */}
           <div className="relative hidden w-full overflow-hidden border-t border-gray-100 md:block lg:border-t-0">
             <motion.img
               src={mockup1}
@@ -79,13 +77,11 @@ export const HowItWorks = () => {
               decoding="async"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={viewport}
               transition={{ ...transition, delay: 0.15 }}
               className="relative w-full scale-150 object-cover md:scale-100 lg:absolute lg:right-0 lg:bottom-0 xl:top-2"
             />
           </div>
 
-          {/* Mockup mobile */}
           <div className="flex h-80 w-full flex-col items-start justify-end overflow-hidden border-t border-gray-100 sm:h-100 md:hidden lg:border-t-0">
             <img
               src={mobileMockup}
@@ -100,7 +96,6 @@ export const HowItWorks = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
           variants={fadeInUp}
           transition={transition}
           className="font-regular flex max-h-full w-full items-center justify-center border-t border-r border-l border-gray-100 px-4 py-8 text-center text-base text-gray-500 md:px-0"
@@ -111,7 +106,6 @@ export const HowItWorks = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
           variants={fadeInUp}
           transition={{ ...transition, delay: 0.06 }}
           className="flex flex-col items-center gap-2 pb-6"

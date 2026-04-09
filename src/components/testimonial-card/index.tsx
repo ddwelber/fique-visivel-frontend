@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeInUp, transition, viewport } from "../../lib/animation";
+import { fadeInUp, transition } from "../../lib/animation";
 
 interface TestimonialCardProps {
   logo: string;
@@ -28,7 +28,6 @@ export const TestimonialCard = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={viewport}
       variants={fadeInUp}
       transition={{ ...transition, delay }}
       whileHover={{ y: -2 }}

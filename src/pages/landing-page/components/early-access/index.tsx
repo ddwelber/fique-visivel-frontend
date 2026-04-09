@@ -3,7 +3,7 @@ import { Cta } from "../../../../components/cta";
 import { Container } from "../../../../layouts/container";
 import { SectionHeader } from "../../../../components/section-header";
 import { GridCard } from "../../../../components/grid-card";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 import { trackEvent } from "../../../../lib/analytics";
 
 interface EarlyAccessItem {
@@ -59,7 +59,6 @@ export const EarlyAccess = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
           variants={fadeInUp}
           transition={{ ...transition, delay: 0.15 }}
           className="flex flex-col items-center gap-2 border-t border-r border-l border-gray-100 px-6 py-8 sm:px-10"

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Container } from "../../../../layouts/container";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 
 import bradesco from "../../../../assets/logos/bradesco.svg";
 import santander from "../../../../assets/logos/santander.svg";
@@ -33,7 +33,6 @@ export const SocialProof = () => {
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={viewport}
               variants={fadeInUp}
               transition={{ ...transition, delay: index * 0.08 }}
               className="flex w-full flex-col items-center justify-center gap-1 border-b border-gray-100 p-6 text-center sm:border-b-0 sm:border-r sm:p-8 last:sm:border-r-0"
@@ -49,7 +48,6 @@ export const SocialProof = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
           variants={fadeInUp}
           transition={{ ...transition, delay: 0.2 }}
           className="flex flex-col items-center justify-between gap-6 border-t border-r border-l border-gray-100 p-6 sm:flex-row sm:p-8"

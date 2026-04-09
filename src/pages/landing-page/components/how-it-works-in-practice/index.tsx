@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import { Container } from "../../../../layouts/container";
 import { SectionHeader } from "../../../../components/section-header";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 
 import leonardo from "../../../../assets/testimonials/leonardo.jpg";
 import { Actions } from "./components/actions";
@@ -17,11 +17,9 @@ export const HowItWorksInPractice = () => {
         </SectionHeader>
 
         <div className="flex w-full flex-col border-r border-l border-gray-100 lg:flex-row lg:items-stretch lg:gap-4">
-          {/* Post: antes */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={viewport}
             variants={fadeInUp}
             transition={transition}
             className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-r lg:p-10"
@@ -65,16 +63,13 @@ export const HowItWorksInPractice = () => {
             </div>
           </motion.div>
 
-          {/* Seta direcional */}
           <div className="flex w-full items-center justify-center py-4 lg:w-auto lg:py-0">
             <MoveRight className="rotate-90 text-gray-500 lg:rotate-0" size={20} />
           </div>
 
-          {/* Post: depois */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={viewport}
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.1 }}
             className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-l lg:p-10"

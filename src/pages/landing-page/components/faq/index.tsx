@@ -3,7 +3,7 @@ import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "../../../../layouts/container";
 import { SectionHeader } from "../../../../components/section-header";
-import { fadeInUp, transition, viewport } from "../../../../lib/animation";
+import { fadeInUp, transition } from "../../../../lib/animation";
 
 interface FaqItem {
   id: number;
@@ -62,7 +62,6 @@ export const Faq = () => {
               key={item.id}
               initial="hidden"
               whileInView="visible"
-              viewport={viewport}
               variants={fadeInUp}
               transition={{ ...transition, delay: index * 0.06 }}
               className="border-b border-gray-100 last:border-b-0"
