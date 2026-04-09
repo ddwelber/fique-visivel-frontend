@@ -1,4 +1,6 @@
 import { Container } from "../../../../layouts/container";
+import { SectionHeader } from "../../../../components/section-header";
+import { TestimonialCard } from "../../../../components/testimonial-card";
 
 import btgPactual from "../../../../assets/logos/btg.svg";
 import bradesco from "../../../../assets/logos/bradesco.svg";
@@ -8,110 +10,67 @@ import lucas from "../../../../assets/testimonials/product-owner.png";
 import leonardo from "../../../../assets/testimonials/leonardo.jpg";
 import camila from "../../../../assets/testimonials/head-marketing.png";
 
+const testimonials = [
+  {
+    logo: btgPactual,
+    logoAlt: "Banco BTG Pactual",
+    text: "Nunca sabia por onde começar, então quase nunca postava. Com a plataforma, transformar o que vivi no trabalho em conteúdo ficou natural. Já recebi contato de recrutadores sem precisar ir atrás de ninguém.",
+    avatar: lucas,
+    avatarAlt: "Lucas Andrade",
+    name: "Lucas Andrade",
+    role: "Product Manager · BTG Pactual",
+    className:
+      "border-b border-gray-100 sm:border-r lg:border-b-0",
+    delay: 0,
+  },
+  {
+    logo: bradesco,
+    logoAlt: "Banco Bradesco",
+    text: "Sempre tive dificuldade de estruturar bem minhas ideias. Hoje meus posts têm clareza, posicionamento e engajamento real. Meu perfil voltou a ser visto pelas pessoas certas.",
+    avatar: leonardo,
+    avatarAlt: "Leonardo Macedo",
+    name: "Leonardo Macedo",
+    role: "Engenheiro de Software · Bradesco",
+    className:
+      "border-b border-gray-100 lg:border-r lg:border-b-0",
+    delay: 0.08,
+  },
+  {
+    logo: santander,
+    logoAlt: "Banco Santander",
+    text: "Em minutos uma ideia simples vira um post claro e com estrutura. Economizo horas por semana que eu gastava tentando escrever, e o engajamento dos meus conteúdos cresceu muito.",
+    avatar: camila,
+    avatarAlt: "Carolina Freitas",
+    name: "Carolina Freitas",
+    role: "Head de Marketing · Santander",
+    className: "md:border-r md:border-gray-100 lg:border-none",
+    delay: 0.16,
+  },
+];
+
 export const Testimonials = () => {
   return (
     <section id="testimonials">
       <Container>
-        <div className="flex w-full items-center justify-center border-r border-b border-l border-gray-100 px-4 py-12 text-center sm:py-16 md:px-0">
-          <h2 className="text-2xl leading-[1.3] font-medium text-black md:text-[2rem]">
-            Resultados reais de quem <br className="hidden sm:block" /> decidiu
-            postar com estratégia
-          </h2>
-        </div>
+        <SectionHeader>
+          Quem já usa, o que está falando
+        </SectionHeader>
 
         <div className="grid w-full grid-cols-1 border-r border-l border-gray-100 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="flex w-full flex-col justify-between gap-6 border-b border-gray-100 p-6 sm:border-r sm:p-8 lg:border-b-0 lg:p-10">
-            <div className="flex flex-col gap-1.5">
-              <img
-                src={btgPactual}
-                alt="Banco BTG Pactual"
-                loading="lazy"
-                className="h-15 w-30"
-              />
-              <p className="text-base leading-normal text-black">
-                Eu quase nunca postava no LinkedIn porque não sabia por onde
-                começar. Com a ferramenta ficou muito mais fácil transformar
-                experiências do trabalho em conteúdo.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <img
-                src={lucas}
-                alt="Lucas Andrade"
-                loading="lazy"
-                className="size-10 rounded-full border border-gray-100 object-cover"
-              />
-              <div className="flex w-full flex-col">
-                <p className="text-base leading-none font-medium text-black">
-                  Lucas Andrade
-                </p>
-                <p className="text-sm text-gray-500">Product Manager</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex w-full flex-col justify-between gap-6 border-b border-gray-100 p-6 sm:p-8 lg:border-r lg:border-b-0 lg:p-10">
-            <div className="flex flex-col gap-1.5">
-              <img
-                src={bradesco}
-                alt="Banco Bradesco"
-                loading="lazy"
-                className="h-15 w-30"
-              />
-              <p className="text-base leading-normal text-black">
-                Eu sempre tive dificuldade em transformar minhas ideias em bons
-                posts. A plataforma me ajudou a estruturar melhor o conteúdo e
-                hoje meus posts parecem profissionais.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <img
-                src={leonardo}
-                alt="Leonardo Macedo"
-                loading="lazy"
-                className="size-10 rounded-full border border-gray-100 object-cover"
-              />
-              <div className="flex w-full flex-col">
-                <p className="text-base leading-none font-medium text-black">
-                  Leonardo Macedo
-                </p>
-                <p className="text-sm text-gray-500">Engenheiro de Software</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex w-full flex-col justify-between gap-6 p-6 sm:p-8 md:border-r md:border-gray-100 lg:border-none lg:p-10">
-            <div className="flex flex-col gap-1.5">
-              <img
-                src={santander}
-                alt="Banco Santander"
-                loading="lazy"
-                className="h-15 w-30"
-              />
-              <p className="text-base leading-normal text-black">
-                O que mais gostei foi a velocidade. Em poucos minutos consigo
-                transformar uma ideia simples em um post muito mais claro e
-                interessante.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <img
-                src={camila}
-                alt="Carolina Freitas"
-                loading="lazy"
-                className="size-10 rounded-full border border-gray-100 object-cover"
-              />
-              <div className="flex w-full flex-col">
-                <p className="text-base leading-none font-medium text-black">
-                  Carolina Freitas
-                </p>
-                <p className="text-sm text-gray-500">Head de Marketing</p>
-              </div>
-            </div>
-          </div>
+          {testimonials.map((t) => (
+            <TestimonialCard
+              key={t.name}
+              logo={t.logo}
+              logoAlt={t.logoAlt}
+              text={t.text}
+              avatar={t.avatar}
+              avatarAlt={t.avatarAlt}
+              name={t.name}
+              role={t.role}
+              className={t.className}
+              delay={t.delay}
+            />
+          ))}
         </div>
       </Container>
     </section>

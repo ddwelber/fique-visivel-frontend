@@ -1,68 +1,55 @@
 import { Container } from "../../../../layouts/container";
+import { SectionHeader } from "../../../../components/section-header";
+import { GridCard } from "../../../../components/grid-card";
 import { InfiniteMessages } from "./components/infinite-messages";
+
+interface BenefitItem {
+  title: string;
+  description: string;
+}
+
+const benefitItems: BenefitItem[] = [
+  {
+    title: "Você vira referência na sua área",
+    description:
+      "Cada post reflete o que você sabe de verdade. Com o tempo, as pessoas certas passam a te ver como referência e o algoritmo começa a te distribuir para quem importa.",
+  },
+  {
+    title: "Presença constante sem esforço nenhum",
+    description:
+      "Conteúdo criado e publicado automaticamente. Sem bloco criativo, sem procrastinação, sem precisar lembrar de postar. Você aparece toda semana enquanto faz o seu trabalho.",
+  },
+  {
+    title: "Mais alcance, menos dependência de sorte",
+    description:
+      "Posts com estrutura estratégica performam melhor no algoritmo. Seu alcance cresce de forma previsível, não por acidente ou por ter postado no horário certo.",
+  },
+  {
+    title: "Recrutadores chegam até você",
+    description:
+      "Com presença consistente e autoridade construída, propostas e convites começam a aparecer. Você para de mandar currículo e começa a receber mensagens.",
+  },
+];
 
 export const Benefits = () => {
   return (
     <section id="benefits">
       <Container>
-        <div className="flex w-full items-center justify-center border-r border-b border-l border-gray-100 px-4 py-12 text-center sm:py-16 md:px-0">
-          <h2 className="text-2xl leading-[1.3] font-medium text-black md:text-[2rem]">
-            Quando sua experiência vira <br className="hidden sm:block" />{" "}
-            conteúdo estratégico
-          </h2>
-        </div>
+        <SectionHeader>
+          O que muda quando você começa{" "}
+          <br className="hidden sm:block" />a postar com estratégia
+        </SectionHeader>
 
-        <div className="flex w-full flex-col border-r border-l border-gray-100">
-          <ul className="flex w-full flex-col sm:flex-row">
-            <li className="w-full">
-              <div className="flex w-full flex-col gap-2 border-b border-gray-100 p-6 sm:border-r sm:p-8 lg:p-10">
-                <span className="text-lg font-medium text-black">
-                  Autoridade no seu nicho
-                </span>
-                <p className="max-w-sm text-base text-gray-500">
-                  Seus posts passam a refletir sua senioridade e visão de
-                  mercado.
-                </p>
-              </div>
-            </li>
-
-            <li className="w-full">
-              <div className="flex w-full flex-col gap-2 border-b border-gray-100 p-6 sm:p-8 lg:p-10">
-                <span className="text-lg font-medium text-black">
-                  Consistência sem esforço
-                </span>
-                <p className="max-w-sm text-base text-gray-500">
-                  Conteúdo planejado, criado e publicado automaticamente.
-                </p>
-              </div>
-            </li>
-          </ul>
-
-          <ul className="flex w-full flex-col sm:flex-row">
-            <li className="w-full">
-              <div className="flex w-full flex-col gap-2 border-b border-gray-100 p-6 sm:border-r sm:border-b-0 sm:p-8 lg:p-10">
-                <span className="text-lg font-medium text-black">
-                  Mais oportunidades chegando até você
-                </span>
-                <p className="max-w-xs text-base text-gray-500">
-                  Recrutadores, convites e conexões passam a surgir
-                  naturalmente.
-                </p>
-              </div>
-            </li>
-
-            <li className="w-full">
-              <div className="flex w-full flex-col gap-2 p-6 sm:p-8 lg:p-10">
-                <span className="text-lg font-medium text-black">
-                  Seu perfil vira um ativo profissional
-                </span>
-                <p className="max-w-sm text-base text-gray-500">
-                  Seu LinkedIn deixa de ser um currículo parado e vira uma
-                  máquina de visibilidade.
-                </p>
-              </div>
-            </li>
-          </ul>
+        <div className="grid w-full grid-cols-1 border-r border-l border-gray-100 sm:grid-cols-2">
+          {benefitItems.map((item, index) => (
+            <GridCard
+              key={index}
+              title={item.title}
+              description={item.description}
+              index={index}
+              total={benefitItems.length}
+            />
+          ))}
         </div>
 
         <div className="w-full">

@@ -1,53 +1,61 @@
+import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import { Container } from "../../../../layouts/container";
+import { SectionHeader } from "../../../../components/section-header";
+import { fadeInUp, transition, viewport } from "../../../../lib/animation";
 
 import leonardo from "../../../../assets/testimonials/leonardo.jpg";
 import { Actions } from "./components/actions";
-
-import { motion } from "framer-motion";
 
 export const HowItWorksInPractice = () => {
   return (
     <section>
       <Container>
-        <div className="flex w-full items-center justify-center border-r border-b border-l border-gray-100 px-4 py-12 text-center sm:py-16 md:px-0">
-          <h2 className="text-2xl leading-[1.3] font-medium text-black md:text-[2rem]">
-            O mesmo profissional. <br className="hidden sm:block" /> Dois jeitos
-            de se posicionar.
-          </h2>
-        </div>
+        <SectionHeader>
+          O mesmo profissional. <br className="hidden sm:block" /> Dois
+          resultados completamente diferentes.
+        </SectionHeader>
 
         <div className="flex w-full flex-col border-r border-l border-gray-100 lg:flex-row lg:items-stretch lg:gap-4">
-          <div className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-r lg:p-10">
-            <p className="text-sm text-gray-500">Antes</p>
+          {/* Post: antes */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            variants={fadeInUp}
+            transition={transition}
+            className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-r lg:p-10"
+          >
+            <p className="text-sm text-gray-500">Sem a plataforma</p>
 
-            <div className="flex w-full flex-col gap-4 rounded-md border border-gray-100 p-4">
+            <div className="flex w-full flex-col gap-4 rounded-md border border-gray-100 p-4 opacity-85">
               <div className="flex items-center gap-2">
                 <img
                   src={leonardo}
                   alt="Leonardo Macedo"
                   loading="lazy"
-                  className="size-10 rounded-full border border-gray-100 object-cover"
+                  decoding="async"
+                  width={40}
+                  height={40}
+                  className="size-10 rounded-full border border-gray-100 object-cover grayscale"
                 />
                 <div className="flex w-full flex-col">
                   <p className="text-base leading-none font-medium text-black">
                     Leonardo Macedo
                   </p>
-                  <p className="text-sm text-gray-500">
-                    Engenheiro de Software
-                  </p>
+                  <p className="text-sm text-gray-500">Engenheiro de Software</p>
                 </div>
               </div>
 
-              <p className="text-base">
+              <p className="text-base text-gray-500">
                 Recentemente trabalhei com o time de vendas em um projeto para
                 melhorar a integração com marketing.
               </p>
-              <p className="text-base">
+              <p className="text-base text-gray-500">
                 A ideia era alinhar melhor os processos e melhorar a comunicação
                 entre as áreas.
               </p>
-              <p className="text-base">
+              <p className="text-base text-gray-500">
                 No final, melhoramos a troca de informações entre os times e
                 deixamos alguns processos mais organizados.
               </p>
@@ -55,37 +63,48 @@ export const HowItWorksInPractice = () => {
               <hr className="border-gray-100" />
               <Actions />
             </div>
-          </div>
+          </motion.div>
 
+          {/* Seta direcional */}
           <div className="flex w-full items-center justify-center py-4 lg:w-auto lg:py-0">
-            <MoveRight
-              className="rotate-90 text-gray-500 lg:rotate-0"
-              size={20}
-            />
+            <MoveRight className="rotate-90 text-gray-500 lg:rotate-0" size={20} />
           </div>
 
-          <div className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-l lg:p-10">
-            <p className="text-sm text-gray-500">
-              Depois, com nossa plataforma
-            </p>
+          {/* Post: depois */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            variants={fadeInUp}
+            transition={{ ...transition, delay: 0.1 }}
+            className="flex w-full flex-col justify-center gap-4 border-gray-100 p-4 lg:border-l lg:p-10"
+          >
+            <div className="flex items-center gap-2">
+              <span className="rounded-md bg-black px-2 py-1 text-xs font-medium text-white">
+                Com a plataforma
+              </span>
+            </div>
 
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="flex w-full flex-col gap-6 rounded-md border border-gray-100 p-4"
+              className="flex w-full flex-col gap-6 rounded-md border border-black p-4"
             >
               <div className="flex items-center gap-2">
                 <img
                   src={leonardo}
+                  alt="Leonardo Macedo"
+                  loading="lazy"
+                  decoding="async"
+                  width={40}
+                  height={40}
                   className="size-10 rounded-full border border-gray-100 object-cover"
                 />
                 <div className="flex w-full flex-col">
                   <p className="text-base leading-none font-medium text-black">
                     Leonardo Macedo
                   </p>
-                  <p className="text-sm text-gray-500">
-                    Engenheiro de Software
-                  </p>
+                  <p className="text-sm text-gray-500">Engenheiro de Software</p>
                 </div>
               </div>
 
@@ -104,7 +123,7 @@ export const HowItWorksInPractice = () => {
                   no caminho
                 </p>
                 <p>
-                  A virada veio quando paramos de focar só em “comunicação” e
+                  A virada veio quando paramos de focar só em "comunicação" e
                   começamos a tratar isso como processo.
                 </p>
                 <p>
@@ -116,7 +135,7 @@ export const HowItWorksInPractice = () => {
               <hr className="border-gray-100" />
               <Actions type="rich" />
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

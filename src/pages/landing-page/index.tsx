@@ -3,11 +3,13 @@ import { trackEvent } from "../../lib/analytics";
 import { Separator } from "../../components/separator";
 import { Benefits } from "./components/benefits";
 import { CallToAction } from "./components/call-to-action";
-import { Difference } from "./components/difference";
+import { EarlyAccess } from "./components/early-access";
+import { Faq } from "./components/faq";
 import { Hero } from "./components/hero";
 import { HowItWorks } from "./components/how-it-works";
 import { HowItWorksInPractice } from "./components/how-it-works-in-practice";
 import { Problem } from "./components/problem";
+import { SocialProof } from "./components/social-proof";
 import { Testimonials } from "./components/testimonials";
 
 export const LandingPage = () => {
@@ -54,17 +56,21 @@ export const LandingPage = () => {
     <main>
       <Hero />
       <Separator />
-      <Problem />
+      <SocialProof />
       <Separator />
-      <HowItWorks />
+      <Problem />
       <Separator />
       <HowItWorksInPractice />
       <Separator />
+      <HowItWorks />
+      <Separator />
       <Benefits />
       <Separator />
-      <Difference />
-      <Separator />
       <Testimonials />
+      <Separator />
+      <Faq />
+      <Separator />
+      <EarlyAccess />
       <Separator />
       <CallToAction />
     </main>

@@ -6,7 +6,7 @@ interface ActionsProps {
 }
 
 export const Actions = ({ type = "poor" }: ActionsProps) => {
-  const targetLikes = type === "rich" ? 728 : 21;
+  const targetLikes = type === "rich" ? 728 : 12;
   const targetComments = type === "rich" ? 32 : 2;
 
   const [likes, setLikes] = useState(0);
